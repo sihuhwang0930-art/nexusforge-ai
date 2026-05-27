@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 
 st.set_page_config(page_title="NexusForge AI", layout="wide")
-st.title("🚀 NexusForge AI")
+st.title("NexusForge AI")
 st.subheader("산업용 AI Digital Twin + Multi-Agent 플랫폼")
 
 st.markdown("**반도체·제조·중공업 공장을 AI가 자율 운영합니다**")
@@ -17,7 +17,7 @@ target = st.sidebar.slider("목표 생산 증가율 (%)", 0, 30, 15)
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.subheader("📍 실시간 Digital Twin")
+    st.subheader("실시간 Digital Twin")
     fig = go.Figure()
     x = list(range(24))
     fig.add_trace(go.Scatter(x=x, y=[80,82,85,88,90,92,94,95,94,92,90,88,85,87,90,93,95,96,94,91,88,85,82,80], name="현재", line=dict(color="blue")))
@@ -26,19 +26,19 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    st.subheader("🤖 Multi-Agent 상태")
+    st.subheader("Multi-Agent 상태")
     st.success("**Production Agent**: 생산 최적화 중 (+14.8%)")
     st.success("**Maintenance Agent**: 이상 없음 (예측 41일 후)")
     st.success("**Energy Agent**: 에너지 19.3% 절감 중")
     st.success("**Quality Agent**: 불량률 0.24% 유지")
 
-st.subheader("💬 AI Agent에게 명령하기")
+st.subheader("AI Agent에게 명령하기")
 command = st.text_input("명령을 입력하세요", "이번 달 생산량 15% 늘리고 에너지 비용 20% 줄여줘")
 
-if st.button("🚀 명령 실행"):
+if st.button("명령 실행"):
     with st.spinner("Multi-Agent들이 협업하고 있습니다..."):
         time.sleep(2.5)
-    st.success("✅ 명령이 성공적으로 실행되었습니다!")
+    st.success("명령이 성공적으로 실행되었습니다!")
     st.balloons()
     st.write("**예상 결과**")
     st.write(f"- 생산량: **+{target}%**")
